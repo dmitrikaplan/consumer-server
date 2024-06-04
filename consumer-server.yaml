@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: consumer-server
-          image: consumer-server:1
+          image: dmitrykaplan/consumer-server:1
           env:
             - name: POSTGRES_QUARTZ_HOST
               valueFrom:
