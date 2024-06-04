@@ -85,3 +85,6 @@ quartz:
   send-payment-order:
     job-name: send-payment-order-job
     trigger-name: send-payment-order-trigger
+
+server:
+  port: 8080
