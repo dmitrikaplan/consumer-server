@@ -35,4 +35,10 @@ interface VacancyRepository: CrudRepository<Vacancy, Long> {
 
     @Query("select * from vacancy where vacancy_id = :vacancyId")
     fun findVacancyById(vacancyId: Long): Vacancy?
+
+    @Query("select count(*) from vacancy where is_archive=false")
+    fun countNonArchiveVacancies(): Long
+
+    @Query("select count(*) from vacancy where is_archive=true")
+    fun countArchiveVacancies(): Long
 }
