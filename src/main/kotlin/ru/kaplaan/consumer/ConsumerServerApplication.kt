@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
+import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.transaction.annotation.EnableTransactionManagement
 import ru.kaplaan.consumer.domain.entity.payment.CompanyPaymentInfo
 import ru.kaplaan.consumer.domain.properties.paymentInfo.CompanyPaymentInfoProperties
@@ -12,6 +13,7 @@ import ru.kaplaan.consumer.service.payment.CompanyPaymentInfoService
 
 @SpringBootApplication
 @EnableTransactionManagement
+@EnableScheduling
 @ConfigurationPropertiesScan(basePackages = ["ru.kaplaan.consumer.domain.properties"])
 class ConsumerServerApplication(
     private val companyPaymentInfoService: CompanyPaymentInfoService,
