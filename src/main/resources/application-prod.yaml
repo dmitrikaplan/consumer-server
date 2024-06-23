@@ -86,5 +86,18 @@ quartz:
     job-name: send-payment-order-job
     trigger-name: send-payment-order-trigger
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+
 server:
   port: 8080
