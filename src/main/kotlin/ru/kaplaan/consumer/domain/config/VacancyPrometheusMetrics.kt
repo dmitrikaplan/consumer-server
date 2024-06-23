@@ -23,14 +23,14 @@ class VacancyPrometheusMetrics(
         meterRegistry.gauge("archive-vacancies", AtomicLong(0))!!
 
 
-    @Scheduled(fixedDelay = 5000L, initialDelay = 0)
+    @Scheduled(fixedRate = 5000)
     fun scheduleCountNonArchiveVacancies(){
         countNonArchiveVacancies.set(metricService.countNonArchiveVacancies())
         log.debug("count non archive vacancies")
     }
 
 
-    @Scheduled(fixedDelay = 5000L, initialDelay = 0)
+    @Scheduled(fixedRate = 5000)
     fun scheduleCountArchiveVacancies(){
         countArchiveVacancies.set(metricService.countArchiveVacancies())
         log.debug("count archive vacancies")
